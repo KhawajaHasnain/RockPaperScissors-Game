@@ -2,3 +2,81 @@
     padding: 0;
     margin: 0;
 }
+.turn-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.turn-text p, .choice-text p, .winning-text p {
+    border: 2px solid black;
+    padding: 4px;
+    font-size: 1.2rem;
+}
+.turn-text p:hover, .choice-text p:hover, .winning-text p:hover {
+    text-decoration: underline;
+}
+.choice-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.choices {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.choice-button {
+    border: none;
+    background-color: white;
+}
+.rock, .paper, .scissor {
+    height: 200px;
+    width: 300px;
+    margin-right: 10px;
+    border: 2px dashed black;
+    border-radius: 15px;
+}
+.rock:hover , .paper:hover , .scissor:hover {
+    border: 2px solid black;
+}
+.rock {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rock p, .rock i {
+    font-size: 2rem;
+}
+.rock i {
+    margin-left: 10px;
+}
+.paper {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.paper p, .paper i {
+    font-size: 2rem;
+}
+.paper i {
+    margin-left: 10px;
+}
+.scissor {
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scissor p, .scissor i {
+    font-size: 2rem;
+}
+.scissor i {
+    margin-left: 10px;
+}
+.winning-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
