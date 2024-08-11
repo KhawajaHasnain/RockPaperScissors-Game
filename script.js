@@ -9,7 +9,8 @@ const turn_change = (turn) => {
         return turn + 1;
     }
     else {
-        document.querySelector(".turn-text").innerHTML = "<p>Player ones's turn</p>"
+        document.querySelector(".turn-text").innerHTML = "<p>Game Over</p>"
+        document.querySelector(".play-again").style.visibility = "visible";
         return turn - 1;
     }
 }
@@ -45,29 +46,34 @@ document.querySelectorAll(".choice-button").forEach((element, idx) => {
     }
 
     element.addEventListener("click", () => {
-        if (turn === 1) {
-            player_one_choice = choice;
-        }
-        else {
-            player_two_choice = choice;
-        }
-        turns_done++;
-        turn = turn_change(turn);
-
-        if (turns_done === 2) {
-            let win = check_win(player_one_choice, player_two_choice);
-
-            document.querySelector(".winning-text").style.visibility = "visible"
-
-            if (win === "draw") {
-                document.querySelector(".winning-text").innerHTML = "<p>It's a draw</p>"
-            }
-            else if (win === "player 1") {
-                document.querySelector(".winning-text").innerHTML = "<p>Player 1 wins!</p>"
+        if (turns_done <= 1) {
+            if (turn === 1) {
+                player_one_choice = choice;
             }
             else {
-                document.querySelector(".winning-text").innerHTML = "<p>Player 2 wins!</p>"
+                player_two_choice = choice;
+            }
+            turns_done++;
+            turn = turn_change(turn);
+
+            if (turns_done === 2) {
+                let win = check_win(player_one_choice, player_two_choice);
+
+                document.querySelector(".winning-text").style.visibility = "visible"
+
+                if (win === "draw") {
+                    document.querySelector(".winning-text").innerHTML = "<p>It's a draw</p>"
+                }
+                else if (win === "player 1") {
+                    document.querySelector(".winning-text").innerHTML = "<p>Player 1 wins!</p>"
+                }
+                else {
+                    document.querySelector(".winning-text").innerHTML = "<p>Player 2 wins!</p>"
+                }
             }
         }
     })
+})
+document.querySelector(".play-again").addEventListener("click", () => {
+    location.reload();
 })

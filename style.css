@@ -81,3 +81,16 @@
     margin-top: 20px;
     visibility: hidden;
 }
+.play-again-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.play-again {
+    font-size: 2rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: beige;
+    padding: 4px;
+    visibility: hidden;
+}
